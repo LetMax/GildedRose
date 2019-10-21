@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SpotBugs Report</title>
+        <style type="text/css">
+            body {
+            	font-family: Candara, Arial, Helvetica, sans-serif;
+            }
+
+            tr {
+                border: 1px solid;
+                border-left: 8px solid;
+            }
+
+            .tablerow0 {
+                background: #EEEEEE;
+            }
+
+            .tablerow1 {
+                background: white;
+            }
+
+            .detailrow0 {
+                background: #EEEEEE;
+            }
+
+            .detailrow1 {
+                background: white;
+            }
+
+            .long_message {
+                color: #220001;
+            }
+
+            .tableheader {
+                font-size: larger;
+                background: #D7D7D7;
+            }
+
+            .high {
+                background: rgb(242, 130, 91);
+                background: -moz-linear-gradient(left, rgba(242, 130, 91, 1) 0%, rgba(255, 35, 35, 1) 100%);
+                background: -webkit-linear-gradient(left, rgba(242, 130, 91, 1) 0%, rgba(255, 35, 35, 1) 100%);
+                background: linear-gradient(to right, rgba(242, 130, 91, 1) 0%, rgba(255, 35, 35, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2825b', endColorstr='#ff2323', GradientType=1);
+                border: 1px solid;
+                border-left: 8px solid;
+                border-color: firebrick;
+            }
+
+            .medium {
+            	background: rgb(235,255,25);
+            	background: -moz-linear-gradient(left,  rgba(235,255,25,1) 0%, rgba(255,125,20,1) 100%);
+            	background: -webkit-linear-gradient(left,  rgba(235,255,25,1) 0%,rgba(255,125,20,1) 100%);
+            	background: linear-gradient(to right,  rgba(235,255,25,1) 0%,rgba(255,125,20,1) 100%);
+            	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebff19', endColorstr='#ff7d14',GradientType=1 );
+                border: 1px solid;
+                border-left: 8px solid;
+                border-color: darkgoldenrod;
+            }
+
+            .low {
+                background: rgb(185, 221, 93);
+                background: -moz-linear-gradient(left, rgba(185, 221, 93, 1) 0%, rgba(155, 242, 171, 1) 100%);
+                background: -webkit-linear-gradient(left, rgba(185, 221, 93, 1) 0%, rgba(155, 242, 171, 1) 100%);
+                background: linear-gradient(to right, rgba(185, 221, 93, 1) 0%, rgba(155, 242, 171, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9dd5d', endColorstr='#9bf2ab', GradientType=1);
+                border: 1px solid;
+                border-left: 8px solid;
+                border-color: darkolivegreen;
+            }
+
+            pre {
+                font-family: "Bitstream Vera Sans Mono", Consolas, "Lucida Console", "Courier New", Monospace !important;
+                box-shadow: 0 0;
+                color: black;
+                border-width: 1px 1px 1px 6px;
+                border-style: solid;
+                padding: 2ex;
+                margin: 2ex 2ex 2ex 2ex;
+                overflow: auto;
+                -moz-border-radius: 0px;
+                -webkit-border-radius: 0px;
+                -khtml-border-radius: 0px;
+                border-radius: 0px;
+                border-color: #996666;
+                background: rgb(232, 239, 244);
+                background: -moz-linear-gradient(left, rgba(232, 239, 244, 1) 1%, rgba(244, 249, 249, 1) 23%, rgba(249, 250, 246, 1) 87%, rgba(241, 242, 236, 1) 98%);
+                background: -webkit-gradient(linear, left top, right top, color-stop(1%, rgba(232, 239, 244, 1)), color-stop(23%, rgba(244, 249, 249, 1)), color-stop(87%, rgba(249, 250, 246, 1)), color-stop(98%, rgba(241, 242, 236, 1)));
+                background: -webkit-linear-gradient(left, rgba(232, 239, 244, 1) 1%, rgba(244, 249, 249, 1) 23%, rgba(249, 250, 246, 1) 87%, rgba(241, 242, 236, 1) 98%);
+                background: -o-linear-gradient(left, rgba(232, 239, 244, 1) 1%, rgba(244, 249, 249, 1) 23%, rgba(249, 250, 246, 1) 87%, rgba(241, 242, 236, 1) 98%);
+                background: -ms-linear-gradient(left, rgba(232, 239, 244, 1) 1%, rgba(244, 249, 249, 1) 23%, rgba(249, 250, 246, 1) 87%, rgba(241, 242, 236, 1) 98%);
+                background: linear-gradient(to right, rgba(232, 239, 244, 1) 1%, rgba(244, 249, 249, 1) 23%, rgba(249, 250, 246, 1) 87%, rgba(241, 242, 236, 1) 98%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8eff4', endColorstr='#f1f2ec', GradientType=1);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SpotBugs Report</h1>
+        <p>
+            Produced using 
+            <a href="https://spotbugs.github.io">SpotBugs </a>
+            3.1.7.
+        </p>
+        <p>Project:
+			</p>
+        <table style="width:90%;">
+            <tr>
+                <td>
+                    <h2>Metrics</h2>
+                    <p>139 lines of code analysed,
+	in 2 classes,
+	in 1 packages.</p>
+                    <table cellpadding="5" cellspacing="2" style="width:90%;border-collapse: collapse;border-style:solid;border-width:thin;">
+                        <tr class="tableheader">
+                            <th align="left">Metric</th>
+                            <th align="right">Total</th>
+                            <th align="right">Density*</th>
+                        </tr>
+                        <tr class="high">
+                            <td>High Priority Warnings</td>
+                            <td align="right" />
+                            <td align="right">NaN</td>
+                        </tr>
+                        <tr class="medium">
+                            <td>Medium Priority Warnings</td>
+                            <td align="right" />
+                            <td align="right">NaN</td>
+                        </tr>
+                        <tr bgcolor="#f0f0f0">
+                            <td>
+                                <b>Total Warnings</b>
+                            </td>
+                            <td align="right">
+                                <b>0</b>
+                            </td>
+                            <td align="right">
+                                <b>0.00</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        <i>(* Defects per thousand lines of non-commenting source statements)</i>
+                    </p>
+                    <p>
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td>
+                    <h2>Summary</h2>
+                    <table cellpadding="5" cellspacing="2" style="width:90%;border-collapse: collapse;border-style:solid;border-width:thin;">
+                        <tr class="tableheader">
+                            <th align="left">Warning Type</th>
+                            <th align="right">Number</th>
+                        </tr>
+                        <tr class="tablerow0">
+                            <td>
+                                <b>Total</b>
+                            </td>
+                            <td align="right">
+                                <b>0</b>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <br />
+            <br />
+        </p>
+        <h1>Warnings</h1>
+        <p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+        <p>
+            <br />
+            <br />
+        </p>
+        <h1>
+            <a name="Details">Warning Types</a>
+        </h1>
+    </body>
+</html>

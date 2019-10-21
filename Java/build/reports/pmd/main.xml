@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.6.1" timestamp="2019-10-21T13:06:25.133">
+<file name="/home/maxime/Documents/M1/S1/GenieLog/GildedRose/Java/src/main/java/com/gildedrose/GildedRose.java">
+<violation beginline="15" endline="17" begincolumn="21" endcolumn="21" rule="CollapsibleIfStatements" ruleset="Basic" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+<violation beginline="25" endline="27" begincolumn="29" endcolumn="29" rule="CollapsibleIfStatements" ruleset="Basic" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+<violation beginline="31" endline="33" begincolumn="29" endcolumn="29" rule="CollapsibleIfStatements" ruleset="Basic" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+<violation beginline="47" endline="49" begincolumn="29" endcolumn="29" rule="CollapsibleIfStatements" ruleset="Basic" package="com.gildedrose" class="GildedRose" method="updateQuality" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+</file>
+</pmd>
