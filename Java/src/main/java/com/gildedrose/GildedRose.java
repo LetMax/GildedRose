@@ -14,30 +14,24 @@ class GildedRose {
                 continue;
             }
 
-            if (!item.name.equals("Aged Brie")
-                    && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (item.name.equals("Aged Brie")) {
+                augmenterQualite(item);
+            } 
+            else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
+                if (item.sellIn < 11) {
+                    augmenterQualite(item);
+                }
+
+                if (item.sellIn < 6) {
+                    augmenterQualite(item);
+                }
+            }
+            else {
                 if (item.quality > 0) {
                     item.quality = item.quality - 1;
                 }
-            } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-
-                    if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.sellIn < 11) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
-                        }
-
-                        if (item.sellIn < 6) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
-                        }
-                    }
-                }
             }
+
             item.sellIn = item.sellIn - 1;
 
             if (item.sellIn < 0) {
@@ -50,11 +44,15 @@ class GildedRose {
                         item.quality = item.quality - item.quality;
                     }
                 } else {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
+                    augmenterQualite(item);
                 }
             }
+        }
+    }
+
+    private void augmenterQualite(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
         }
     }
 }
