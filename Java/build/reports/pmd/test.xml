@@ -2,7 +2,7 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.8.0" timestamp="2019-11-05T16:23:45.245">
+    version="6.8.0" timestamp="2019-11-05T17:07:42.858">
 <file name="/home/maxime/Documents/M1/S1/GenieLog/GildedRose/Java/src/test/java/com/gildedrose/GildedRoseTest.java">
 <violation beginline="11" endline="11" begincolumn="46" endcolumn="57" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="com.gildedrose" class="GildedRoseTest" method="positiveQuality" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal &quot;quelconque&quot; appears 6 times in this file; the first occurrence is on line 11

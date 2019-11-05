@@ -163,4 +163,12 @@ public class GildedRoseTest {
         Item[] items = new Item[] { new Item("quelconque", 20, 20) };
         assertEquals("quelconque, 20, 20", items[0].toString());
     }
+
+    @Test
+    public void shouldDecreaseTwiceFasterWhenConjured() {
+        Item[] items = new Item[] { new Item("Conjured Mana Cake", 20, 20) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(18, app.items[0].quality);
+    }
 }
