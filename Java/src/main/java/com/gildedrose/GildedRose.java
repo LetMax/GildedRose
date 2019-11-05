@@ -46,6 +46,10 @@ class GildedRose {
                 } 
                 else {
                     diminuerQualite(item);
+
+                    if(item.name.equals("Conjured Mana Cake")){
+                        diminuerQualite(item);
+                    }
                 }
             }
         }

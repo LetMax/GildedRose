@@ -46,21 +46,25 @@ class GildedRose {
                 } 
                 else {
 <span class="fc" id="L48">                    diminuerQualite(item);</span>
+
+<span class="fc bfc" id="L50" title="All 2 branches covered.">                    if(item.name.equals(&quot;Conjured Mana Cake&quot;)){</span>
+<span class="fc" id="L51">                        diminuerQualite(item);</span>
+                    }
                 }
             }
         }
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L56">    }</span>
 
     private void diminuerQualite(Item item) {
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
-<span class="fc" id="L56">            item.quality = item.quality - 1;</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
+<span class="fc" id="L60">            item.quality = item.quality - 1;</span>
         }
-<span class="fc" id="L58">    }</span>
+<span class="fc" id="L62">    }</span>
 
     private void augmenterQualite(Item item) {
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (item.quality &lt; 50) {</span>
-<span class="fc" id="L62">            item.quality = item.quality + 1;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (item.quality &lt; 50) {</span>
+<span class="fc" id="L66">            item.quality = item.quality + 1;</span>
         }
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L68">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
