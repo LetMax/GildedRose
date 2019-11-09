@@ -7,7 +7,7 @@ import org.junit.Test;
 public class GildedRoseTest {
 
     @Test
-    public void positiveQuality() {
+    public void ShouldQualityRemainPositiveWhenNormal() {
         Item[] items = new Item[] { new Item("quelconque", 3, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -15,15 +15,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void qualityUnder50() {
-        Item[] items = new Item[] { new Item("Aged Brie", 3, 50) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(50, app.items[0].quality);
-    }
-
-    @Test
-    public void normalItemQualtity() {
+    public void ShouldQualityDecreaseBy1WhenNormalItem() {
         Item[] items = new Item[] { new Item("quelconque", 3, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -31,7 +23,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void normalItemSellIn() {
+    public void ShouldSellInDecreaseBy1WhenNormalItem() {
         Item[] items = new Item[] { new Item("quelconque", 3, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -39,7 +31,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void normalItemQualityZeroSellIn() {
+    public void ShouldQualityDecreaseBy2WhenNormalItemAndSellIn0() {
         Item[] items = new Item[] { new Item("quelconque", 0, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -47,7 +39,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void normalItemNegativeQualityZeroSellIn() {
+    public void ShouldQualityStaySameWhenNormalItemAndNegative() {
         Item[] items = new Item[] { new Item("quelconque", 0, -1) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -55,7 +47,15 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void agedBrieQualtity() {
+    public void ShouldQualityStayUnder50WhenAgedBrie() {
+        Item[] items = new Item[] { new Item("Aged Brie", 3, 50) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
+    public void ShouldQualityIncreaseWhenAgedBrie() {
         Item[] items = new Item[] { new Item("Aged Brie", 3, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -63,7 +63,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void agedBrieQualtityNegativeSellIn() {
+    public void ShouldQualityIncreaseTwiceWhenAgedBrieSellInNegative() {
         Item[] items = new Item[] { new Item("Aged Brie", -1, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -71,7 +71,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void agedBrieQualtity50NegativeSellIn() {
+    public void ShouldQualityStayUnder50WhenAgedBrieSellInNegative() {
         Item[] items = new Item[] { new Item("Aged Brie", -1, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -79,7 +79,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void sulfurasQuality() {
+    public void ShouldQualityStaySameWhenSulfuras() {
         Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 3, 80) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -87,7 +87,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void sulfurasSellIn() {
+    public void ShouldSellInStaySameWhenSulfuras() {
         Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 3, 30) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -95,23 +95,15 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void SulfurasQualityNegativeSellIn() {
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 30) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(30, app.items[0].quality);
-    }
-
-    @Test
-    public void backstageQuality() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 20, 35) };
+    public void ShouldQualityIncreaseBy1WhenBackstageAndSellInOver10() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 35) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(36, app.items[0].quality);
     }
 
     @Test
-    public void backstageQuality50() {
+    public void ShouldQualityStayUnder50WhenBackstage() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 20, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -119,7 +111,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void backstageQualitySellIn10() {
+    public void ShouldQualityIncreaseBy2WhenBackstageAndSellInBetween10And5() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 7, 35) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -127,7 +119,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void backstageQuality50SellIn10() {
+    public void ShouldQualityStayUnder50WhenBackstageAndSellInBetween10And5() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 7, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -135,7 +127,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void backstageQualitySellIn5() {
+    public void ShouldQualityIncreaseBy3WhenBackstageAndSellInUnder5() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 3, 35) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -143,7 +135,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void backstageQuality50SellIn5() {
+    public void ShouldQualityStayUnder50WhenBackstageAndSellInUnder5() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 3, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -151,17 +143,11 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void backstageQualitySellIn0() {
+    public void ShouldSellInStayPositiveWhenBackstage() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 35) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(0, app.items[0].quality);
-    }
-
-    @Test
-    public void toStringTest() {
-        Item[] items = new Item[] { new Item("quelconque", 20, 20) };
-        assertEquals("quelconque, 20, 20", items[0].toString());
     }
 
     @Test
@@ -178,5 +164,11 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(16, app.items[0].quality);
+    }
+
+    @Test
+    public void toStringTest() {
+        Item[] items = new Item[] { new Item("quelconque", 20, 20) };
+        assertEquals("quelconque, 20, 20", items[0].toString());
     }
 }
